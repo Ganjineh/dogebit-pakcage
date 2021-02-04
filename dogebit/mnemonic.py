@@ -2,8 +2,9 @@ import random
 from .py2specials import *
 from .py3specials import *
 from bisect import bisect_left
+from .english import word_list
 
-wordlist_english=list(open(os.path.join(os.path.dirname(os.path.realpath(__file__)),'english.txt'),'r'))
+wordlist_english= word_list
 
 def eint_to_bytes(entint,entbits):
     a=hex(entint)[2:].rstrip('L').zfill(32)
