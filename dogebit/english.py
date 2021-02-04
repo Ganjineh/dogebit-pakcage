@@ -1,4 +1,4 @@
-world_list = ['abandon',
+word_list = ['abandon',
 'ability',
 'able',
 'about',
