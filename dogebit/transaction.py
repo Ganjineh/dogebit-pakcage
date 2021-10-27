@@ -2,6 +2,7 @@
 import binascii, re, copy
 from main import *
 from _functools import reduce
+from ripemd import *
 
 ### Hex to bin converter and vice versa for objects
 
