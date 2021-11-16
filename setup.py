@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dogebit", 
-    version="1.0.0",
+    version="1.0.1",
     author="Omid Mesgarha",
     author_email="omid.mesgarha@gmail.com",
     description="a packge for using doge coin and bitcoin, that forked from pybitcointools",
