@@ -5,7 +5,7 @@ from main import *
 from explorers import blockchain
 from py3specials import *
 from py2specials import *
-from main import magicbyte_to_prefix
+from dogebit.main import magicbyte_to_prefix
 class BaseCoin(object):
     """
     Base implementation of crypto coin class
