@@ -3,6 +3,7 @@ import binascii, re, copy
 from main import *
 from _functools import reduce
 from ripemd import *
+from dogebit.main import b58check_to_hex
 
 ### Hex to bin converter and vice versa for objects
 
