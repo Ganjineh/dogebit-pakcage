@@ -1,7 +1,7 @@
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from explorers import blockchain
+from dogebit.explorers import blockchain
 from .base import BaseCoin
 
 
