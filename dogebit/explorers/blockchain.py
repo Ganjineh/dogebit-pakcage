@@ -1,6 +1,6 @@
 import re
 import requests
-from transaction import public_txhash
+from dogebit.transaction import public_txhash
 from .utils import parse_addr_args
 
 def get_url(coin_symbol):

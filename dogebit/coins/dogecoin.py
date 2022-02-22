@@ -1,5 +1,5 @@
 from .bitcoin import Bitcoin
-from explorers import sochain
+from dogebit.explorers import sochain
 
 
 class Doge(Bitcoin):
