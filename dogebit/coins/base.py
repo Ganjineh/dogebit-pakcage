@@ -89,7 +89,7 @@ class BaseCoin(object):
         """
         Get address from a private key
         """
-        return privtoaddr(privkey, magicbyte=self.magicbyte)
+        return self.privtoaddr(privkey, magicbyte=self.magicbyte)
 
     def electrum_address(self, masterkey, n, for_change=0):
         pubkey = electrum_pubkey(masterkey, n, for_change=for_change)
