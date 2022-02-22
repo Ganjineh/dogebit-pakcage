@@ -1,11 +1,13 @@
-from transaction import *
-from deterministic import electrum_pubkey
-from blocks import mk_merkle_proof
-from main import *
-from explorers import blockchain
-from py3specials import *
-from py2specials import *
+from dogebit.transaction import *
+from dogebit.deterministic import electrum_pubkey
+from dogebit.blocks import mk_merkle_proof
+from dogebit.main import *
+from dogebit.explorers import blockchain
+from dogebit.py3specials import *
+from dogebit.py2specials import *
 from dogebit.main import b58check_to_hex, magicbyte_to_prefix
+
+
 class BaseCoin(object):
     """
     Base implementation of crypto coin class
@@ -89,7 +91,7 @@ class BaseCoin(object):
         """
         Get address from a private key
         """
-        return self.privtoaddr(privkey, magicbyte=self.magicbyte)
+        return privtoaddr(privkey, magicbyte=self.magicbyte)
 
     def electrum_address(self, masterkey, n, for_change=0):
         pubkey = electrum_pubkey(masterkey, n, for_change=for_change)
