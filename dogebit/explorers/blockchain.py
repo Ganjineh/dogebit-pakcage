@@ -5,7 +5,7 @@ from .utils import parse_addr_args
 
 def get_url(coin_symbol):
     if coin_symbol == "BTC":
-        return "https://blockchain.info"
+        return "https://sochain.com"
     return "https://testnet.blockchain.info"
 
 sendtx_url = "%s/pushtx"
@@ -16,7 +16,7 @@ block_height_url = "%s/block-height/%s?format=json"
 latest_block_url = "%s/latestblock"
 block_info_url = "%s/rawblock/%s"
 
-def unspent(*args, coin_symbol="BTC"):
+def unspent(*args, coin_symbol="DOGE"):
 
     addrs = parse_addr_args(*args)
 
@@ -40,7 +40,7 @@ def unspent(*args, coin_symbol="BTC"):
     except (ValueError, KeyError):
         raise Exception("Unable to decode JSON from result: %s" % response.text)
 
-def fetchtx(txhash, coin_symbol="BTC"):
+def fetchtx(txhash, coin_symbol="DOGE"):
     base_url = get_url(coin_symbol)
     url = fetchtx_url % (base_url, txhash)
     response = requests.get(url)
@@ -49,11 +49,11 @@ def fetchtx(txhash, coin_symbol="BTC"):
     except ValueError:
         raise Exception("Unable to decode JSON from result: %s" % response.text)
 
-def tx_hash_from_index(index, coin_symbol="BTC"):
+def tx_hash_from_index(index, coin_symbol="DOGE"):
     result = fetchtx(index, coin_symbol=coin_symbol)
     return result['hash']
 
-def txinputs(txhash, coin_symbol="BTC"):
+def txinputs(txhash, coin_symbol="DOGE"):
     result = fetchtx(txhash, coin_symbol=coin_symbol)
     inputs = result['inputs']
     unspents = [{'output': "%s:%s" % (
@@ -61,7 +61,7 @@ def txinputs(txhash, coin_symbol="BTC"):
                  'value': i["prev_out"]['value']} for i in inputs]
     return unspents
 
-def pushtx(tx, coin_symbol="BTC"):
+def pushtx(tx, coin_symbol="DOGE"):
     if not re.match('^[0-9a-fA-F]*$', tx):
         tx = tx.encode('hex')
 
@@ -94,11 +94,11 @@ def history(*args, coin_symbol="BTC"):
     response = requests.get(url)
     return response.json()
 
-def block_height(txhash, coin_symbol="BTC"):
+def block_height(txhash, coin_symbol="DOGE"):
     tx = fetchtx(txhash,coin_symbol=coin_symbol)
     return tx['block_height']
 
-def block_info(height, coin_symbol="BTC"):
+def block_info(height, coin_symbol="DOGE"):
     base_url = get_url(coin_symbol)
     url = block_height_url % (base_url, height)
     response = requests.get(url)
@@ -115,7 +115,7 @@ def block_info(height, coin_symbol="BTC"):
         'tx_hashes': [t['hash'] for t in data['tx']]
     }
 
-def current_block_height(coin_symbol="BTC"):
+def current_block_height(coin_symbol="DOGE"):
     base_url = get_url(coin_symbol)
     url = latest_block_url % base_url
     response = requests.get(url)
