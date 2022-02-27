@@ -36,6 +36,7 @@ def unspent(*args, coin_symbol="DOGE"):
                         "output": o['tx_hash_big_endian']+':'+str(o['tx_output_n']),
                         "value": o['value']
                     }
+            
         return outputs
     except (ValueError, KeyError):
         raise Exception("Unable to decode JSON from result: %s" % response.text)
@@ -80,7 +81,7 @@ def pushtx(tx, coin_symbol="DOGE"):
 
 # Gets the transaction output history of a given set of addresses,
 # including whether or not they have been spent
-def history(*args, coin_symbol="BTC"):
+def history(*args, coin_symbol="DOGE"):
     # Valid input formats: history([addr1, addr2,addr3])
     #                      history(addr1, addr2, addr3)
 

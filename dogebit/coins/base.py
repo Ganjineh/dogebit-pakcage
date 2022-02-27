@@ -387,6 +387,7 @@ class BaseCoin(object):
         which support segwit, overriding the segwit kw
         """
         tx = self.preparesignedmultitx(privkey, *args, change_addr=change_addr, segwit=segwit, addr=addr)
+        print(tx)
         return self.pushtx(tx)
 
     def preparetx(self, frm, to, value, fee, change_addr=None, segwit=False):
@@ -409,6 +410,7 @@ class BaseCoin(object):
             outvalue += int(a.split(":")[1])
 
         u = self.unspent(frm)
+        print(u)
         u2 = select(u, int(outvalue) + int(fee))
         change_addr = change_addr or frm
         argz = u2 + outs + [change_addr, fee]

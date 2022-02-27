@@ -6,7 +6,7 @@ from .base import BaseCoin
 
 
 class Bitcoin(BaseCoin):
-    coin_symbol = "BTC"
+    coin_symbol = "DOGE"
     display_name = "Bitcoin"
     segwit_supported = True
     magicbyte = 0

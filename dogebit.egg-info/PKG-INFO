@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: dogebit
+Version: 1.0.1
+Summary: a packge for using doge coin and bitcoin, that forked from pybitcointools
+Home-page: https://github.com/armagg/pybitcointools
+Author: Omid Mesgarha
+Author-email: omid.mesgarha@gmail.com
+License: UNKNOWN
+Description: # dogebit package
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

@@ -37,13 +37,13 @@ def fetchtx(txhash, coin_symbol="DOGE"):
     result = response.json()
     return result['data']
 
-def gettxdetails(txhash, coin_symbol="DOGE"):
+def gettxdetails(txhash, coin_symbol="BTC"):
     url = tx_details_url % (coin_symbol, txhash)
     response = requests.get(url)
     result = response.json()
     return result['data']
 
-def txinputs(txhash, coin_symbol="DOGE"):
+def txinputs(txhash, coin_symbol="BTC"):
     url = tx_inputs_url % (coin_symbol, txhash)
     response = requests.get(url)
     result = response.json()
